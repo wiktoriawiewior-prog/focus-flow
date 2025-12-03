@@ -12,7 +12,7 @@ function addTask() {
     const time = parseInt(timeInput.value) || null;
     
     if (text === '') {
-        alert('Wpisz treść zadania!');
+        alert('Please enter a task!');
         return;
     }
     
@@ -70,10 +70,10 @@ function renderTasks() {
             
             const actions = [];
             if (task.status !== 'todo') {
-                actions.push(`<button class="move-btn" onclick="moveTask(${task.id}, 'prev')">← Wstecz</button>`);
+                actions.push(`<button class="move-btn" onclick="moveTask(${task.id}, 'prev')">← Back</button>`);
             }
             if (task.status !== 'done') {
-                actions.push(`<button class="move-btn" onclick="moveTask(${task.id}, 'next')">Dalej →</button>`);
+                actions.push(`<button class="move-btn" onclick="moveTask(${task.id}, 'next')">Next →</button>`);
             }
             actions.push(`<button class="delete-btn" onclick="deleteTask(${task.id})">🗑️</button>`);
             
