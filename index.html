@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Zadań - Kanban</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📋 Moja Lista Zadań</h1>
+        
+        <div class="add-task-section">
+            <input type="text" id="taskInput" placeholder="Dodaj nowe zadanie...">
+            <button onclick="addTask()">Dodaj</button>
+        </div>
+
+        <div class="board">
+            <div class="column" data-status="todo">
+                <div class="column-header">
+                    <h2>📝 Do zrobienia</h2>
+                    <span class="task-count">0</span>
+                </div>
+                <div class="tasks" id="todo"></div>
+            </div>
+
+            <div class="column" data-status="inprogress">
+                <div class="column-header">
+                    <h2>⚙️ W trakcie</h2>
+                    <span class="task-count">0</span>
+                </div>
+                <div class="tasks" id="inprogress"></div>
+            </div>
+
+            <div class="column" data-status="done">
+                <div class="column-header">
+                    <h2>✅ Ukończone</h2>
+                    <span class="task-count">0</span>
+                </div>
+                <div class="tasks" id="done"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
