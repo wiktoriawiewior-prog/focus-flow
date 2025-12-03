@@ -7,7 +7,9 @@ function saveTasks() {
 
 function addTask() {
     const input = document.getElementById('taskInput');
+    const timeInput = document.getElementById('timeInput');
     const text = input.value.trim();
+    const time = parseInt(timeInput.value) || null;
     
     if (text === '') {
         alert('Wpisz treść zadania!');
@@ -17,13 +19,15 @@ function addTask() {
     const task = {
         id: Date.now(),
         text: text,
-        status: 'todo'
+        status: 'todo',
+        time: time
     };
     
     tasks.push(task);
     saveTasks();
     renderTasks();
     input.value = '';
+    timeInput.value = '';
 }
 
 function deleteTask(id) {
@@ -73,10 +77,13 @@ function renderTasks() {
             }
             actions.push(`<button class="delete-btn" onclick="deleteTask(${task.id})">🗑️</button>`);
             
+            const timeDisplay = task.time ? `<span class="task-time">⏱️ ${task.time} min</span>` : '';
+            
             taskEl.innerHTML = `
                 <div class="task-content">
                     <span class="task-text">${task.text}</span>
                     <div class="task-actions">
+                        ${timeDisplay}
                         ${actions.join('')}
                     </div>
                 </div>

@@ -46,6 +46,20 @@ h1 {
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
+#timeInput {
+    width: 130px;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+#timeInput:focus {
+    outline: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
 .add-task-section button {
     padding: 15px 30px;
     background: #4CAF50;
@@ -139,6 +153,19 @@ h1 {
     flex: 1;
     color: #333;
     font-size: 15px;
+}
+
+.task-time {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: #f0f0f0;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 13px;
+    color: #666;
+    margin-right: 10px;
+    white-space: nowrap;
 }
 
 .task-actions {
